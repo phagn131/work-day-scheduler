@@ -7,8 +7,7 @@ This scheduler is designed for someone with a busy lifestylye, storing the data 
 
 ## Acceptance Criteria
 
-This calendar is designed to display the current time, and is blocked off in hourly increments.
-The blocks will display whether the events displayed are current, past or in for a later time by using seperate colors. When I enter an event it is saved in local storage and will be able to be retreived when the page is refreshed or closed.
+This application calendar is designed to display the current time, and is blocked off in hourly increments using JQuery, Moment.JS, Bootstrap components and local storage. The blocks will display whether the events displayed are current, past or in for a later time by using seperate colors. When I enter an event it is saved in local storage and will be able to be retreived when the page is refreshed or closed.
 
 ## 📝 Notes
 
@@ -22,5 +21,5 @@ The blocks will display whether the events displayed are current, past or in for
 ## Mock-Up
 The following image demonstrates the functionality of the application:
 
-![Work Day Scheduler](/assets/images/img-work-day-scheduler-1.png)
+![Work Day Scheduler](/assets/images/calendar-img-2.png)
 
