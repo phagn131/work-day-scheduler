@@ -20,13 +20,6 @@ body {
     padding: 10px;
   }
 
-.col{
-  color: black;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-
   .jumbotron {
     text-align: center;
     background-color: transparent;
