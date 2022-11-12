@@ -10,7 +10,8 @@ textarea {
   resize: none;
   color: #000000;
   border-left: 1px solid black;
-  padding: 10px;
+  padding: 5px;
+  text-align: left;
 }
 
 .jumbotron {
@@ -26,20 +27,24 @@ textarea {
 }
 
 .time-block {
-  text-align: center;
+  text-align: start;
   border-radius: none;
 }
 
 .row {
   white-space: pre-wrap;
-  height: 80px;
+  height: 10vh;
   border-top: 1px solid white;
 }
 
 .time-slot{
   border: 1px solid white;
 }
-
+.btn .btn-secondary{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .hour {
   background-color: #ffffff;
   color: #000000;

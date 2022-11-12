@@ -83,11 +83,5 @@ $(document).ready(function () {
     ("");
       
   }
-  if (localStorage["10pm"] !== null && localStorage["10pm"] !== undefined) {
-    var tenPm = $("<p>" + localStorage["10pm"] + "</p>");
-    $("#tenPm").append(tenPm[0].innerText);
-  } else {
-    ("");
-  }
 
 });
