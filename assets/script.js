@@ -1,26 +1,34 @@
 //creates element for day using JQuery selector, modify the element and append it to the page
 
 var $today = $("#currentDay");
-var currentDay = moment();
-document.getElementById("currentDay").innerHTML = currentDay;
-$today.text(currentDay.format("dddd, MMMM Do"));
-//set variable for hour block using moment.JS
-var timeBlock = $(".hour");
-var now = parseInt(moment().format("H"));
+//var currentDay = moment().format("dddd, MMMM Do");
 
+//document.getElementById("currentDay").innerHTML = currentDay;
+$today.text(moment().format("dddd, MMMM Do"));
+function update(){
+  var currentHour = moment().hours();
+  $(".time-block").each(function() {
+    var hourId = parseInt($(this).attr("id").split("-")[1]);
+    if (hourId < currentHour) {
+      $(this).addClass("past");
+    } else if (hourId === currentHour) {
+      $(this).removeClass("past");
+      $(this).addClass("present");
+    } else  {
+      $(this).removeClass("past");
+      $(this).removeClass("present");
+      $(this).addClass("future");
+    }
+  });
+}
+update();
+//set variable for hour block using moment.JS
 //sets function to modify hour block, and sets parameters for what class to call 
-$.each(timeBlock, function (i, hour) {
-  var hourId = parseInt($(this).attr("id"));
-  if (hourId === now) {
-    $(this).next().addClass("present");
-  } else if (hourId < now) {
-    $(this).next().addClass("past");
-  } else if (hourId > now) {
-    $(this).next().addClass("future");
-  }
-});
+
 //saves calendar items with function using JQuery selector on button, click event and sets data
 //and modifies and appends the items to local storage
+
+
 $(".saveBtn").on("click", function (event) {
   var calendarItem =
     event.target.parentElement.previousElementSibling.children[0].value;
