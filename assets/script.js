@@ -4,17 +4,17 @@ var $today = $("#currentDay");
 //var currentDay = moment().format("dddd, MMMM Do");
 
 //document.getElementById("currentDay").innerHTML = currentDay;
-$today.text(moment().format("dddd, MMMM Do"));
-function update(){
+$today.text(moment().format("dddd, MMMM Do,"));
+function update() {
   var currentHour = moment().hours();
-  $(".time-block").each(function() {
+  $(".time-block").each(function () {
     var hourId = parseInt($(this).attr("id").split("-")[1]);
     if (hourId < currentHour) {
       $(this).addClass("past");
     } else if (hourId === currentHour) {
       $(this).removeClass("past");
       $(this).addClass("present");
-    } else  {
+    } else {
       $(this).removeClass("past");
       $(this).removeClass("present");
       $(this).addClass("future");
@@ -22,26 +22,33 @@ function update(){
   });
 }
 update();
-//set variable for hour block using moment.JS
-//sets function to modify hour block, and sets parameters for what class to call 
-
-//saves calendar items with function using JQuery selector on button, click event and sets data
-//and modifies and appends the items to local storage
-
 
 $(".saveBtn").on("click", function (event) {
   var calendarItem =
     event.target.parentElement.previousElementSibling.children[0].value;
-    localStorage.setItem(event.target.attributes[0].value, calendarItem);
+  localStorage.setItem(event.target.attributes[0].value, calendarItem);
 });
 //Sets function for each hour to modify and append to local storage, if one is selected
 $(document).ready(function () {
+  
+  
+  
+  
+  
   if (localStorage["9am"] !== null && localStorage["9am"] !== undefined) {
     var nineAm = $("<p>" + localStorage["9am"] + "</p>");
     $("#nineAm").append(nineAm[0].innerText);
   } else {
     ("");
   }
+  
+  
+  
+  
+  
+  
+  
+  
   if (localStorage["10am"] !== null && localStorage["10am"] !== undefined) {
     var tenAm = $("<p>" + localStorage["10am"] + "</p>");
     $("#tenAm").append(tenAm[0].innerText);
@@ -89,7 +96,8 @@ $(document).ready(function () {
     $("#fivePm").append(fivePm[0].innerText);
   } else {
     ("");
-      
+
   }
+
 
 });
