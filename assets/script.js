@@ -1,10 +1,10 @@
 //creates element for day using JQuery selector, modify the element and append it to the page
 
 var $today = $("#currentDay");
-//var currentDay = moment().format("dddd, MMMM Do");
+var currentDay = moment().format("dddd, MMMM Do");
 
-//document.getElementById("currentDay").innerHTML = currentDay;
-$today.text(moment().format("dddd, MMMM Do,"));
+document.getElementById("currentDay").innerHTML = currentDay;
+$today.text(moment().format("dddd, MMMM Do"));
 function update() {
   var currentHour = moment().hours();
   $(".time-block").each(function () {
@@ -18,6 +18,8 @@ function update() {
       $(this).removeClass("past");
       $(this).removeClass("present");
       $(this).addClass("future");
+      console.log(currentHour);
+      console.log(currentDay);
     }
   });
 }
@@ -30,27 +32,17 @@ $(".saveBtn").on("click", function (event) {
 });
 //Sets function for each hour to modify and append to local storage, if one is selected
 $(document).ready(function () {
-  
-  
-  
-  
-  
-  if (localStorage["9am"] !== null && localStorage["9am"] !== undefined) {
-    var nineAm = $("<p>" + localStorage["9am"] + "</p>");
+
+  if (localStorage["9"] !== null && localStorage["9"] !== undefined) {
+    var nineAm = $("<p>" + localStorage["9"] + "</p>");
     $("#nineAm").append(nineAm[0].innerText);
+
   } else {
     ("");
   }
-  
-  
-  
-  
-  
-  
-  
-  
-  if (localStorage["10am"] !== null && localStorage["10am"] !== undefined) {
-    var tenAm = $("<p>" + localStorage["10am"] + "</p>");
+
+  if (localStorage["10"] !== null && localStorage["10"] !== undefined) {
+    var tenAm = $("<p>" + localStorage["10"] + "</p>");
     $("#tenAm").append(tenAm[0].innerText);
   } else {
     ("");
@@ -98,6 +90,5 @@ $(document).ready(function () {
     ("");
 
   }
-
-
+  
 });
