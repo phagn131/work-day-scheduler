@@ -27,8 +27,9 @@ update();
 
 $(".saveBtn").on("click", function (event) {
   var calendarItem =
-    event.target.parentElement.previousElementSibling.children[0].value;
-  localStorage.setItem(event.target.attributes[0].value, calendarItem);
+    event.target.parentElement.children[1].value;
+    console.log(event.target.parentElement.children[0].innerHTML);
+    localStorage.setItem(event.target.parentElement.children[0].innerHTML, calendarItem);
 });
 //Sets function for each hour to modify and append to local storage, if one is selected
 $(document).ready(function () {
