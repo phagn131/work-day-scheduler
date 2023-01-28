@@ -7,7 +7,7 @@ document.getElementById("currentDay").innerHTML = currentDay;
 $today.text(moment().format("dddd, MMMM Do"));
 function update() {
   var currentHour = moment().hours();
-  //console.log(currentDay);
+
   console.log(currentHour);
   $(".time-block").each(function () {
     var hourId = parseInt($(this).attr("id"));
@@ -31,28 +31,28 @@ update();
 $(".saveBtn").on("click", function (event) {
   var calendarItem =
     event.target.parentElement.children[1].value;
-    console.log(event.target.parentElement.children[0].innerHTML);
-    localStorage.setItem(event.target.parentElement.children[0].innerHTML, calendarItem);
+  console.log(event.target.parentElement.children[0].innerHTML);
+  localStorage.setItem(event.target.parentElement.children[0].innerHTML, calendarItem);
 });
 //Sets function for each hour to modify and append to local storage, if one is selected
 $(document).ready(function () {
 
-  if (localStorage["9"] !== null && localStorage["9"] !== undefined) {
-    var nineAm = $("<p>" + localStorage["9"] + "</p>");
+  if (localStorage["9am"] !== null && localStorage["9am"] !== undefined) {
+    var nineAm = $("<p>" + localStorage["9am"] + "</p>");
     $("#nineAm").append(nineAm[0].innerText);
 
   } else {
     ("");
   }
 
-  if (localStorage["10"] !== null && localStorage["10"] !== undefined) {
-    var tenAm = $("<p>" + localStorage["10"] + "</p>");
+  if (localStorage["10am"] !== null && localStorage["10am"] !== undefined) {
+    var tenAm = $("<p>" + localStorage["10am"] + "</p>");
     $("#tenAm").append(tenAm[0].innerText);
   } else {
     ("");
   }
   if (localStorage["11am"] !== null && localStorage["11am"] !== undefined) {
-    var elevenAm = $("<p>" + localStorage["11am"] + "</p>");
+    var elevenAm = $("<p>" + localStorage["11"] + "</p>");
     $("#elevenAm").append(elevenAm[0].innerText);
   } else {
     ("");
@@ -94,5 +94,5 @@ $(document).ready(function () {
     ("");
 
   }
-  
+
 });
