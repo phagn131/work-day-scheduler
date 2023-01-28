@@ -7,8 +7,11 @@ document.getElementById("currentDay").innerHTML = currentDay;
 $today.text(moment().format("dddd, MMMM Do"));
 function update() {
   var currentHour = moment().hours();
+  //console.log(currentDay);
+  console.log(currentHour);
   $(".time-block").each(function () {
-    var hourId = parseInt($(this).attr("id").split("-")[1]);
+    var hourId = parseInt($(this).attr("id"));
+    console.log(hourId);
     if (hourId < currentHour) {
       $(this).addClass("past");
     } else if (hourId === currentHour) {
@@ -18,8 +21,8 @@ function update() {
       $(this).removeClass("past");
       $(this).removeClass("present");
       $(this).addClass("future");
-      console.log(currentHour);
-      console.log(currentDay);
+      //console.log(currentHour);
+      //console.log(currentDay);
     }
   });
 }
